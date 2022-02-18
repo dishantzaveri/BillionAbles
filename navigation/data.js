@@ -48,17 +48,13 @@ export const data = [
     answer: 'The website is built for specially disabbled person to decrease the difficulty faced by them in there day to day life ',
   },
   {
-    question: 'how is todays wheater ?',
+    question: 'how is todays weather ?',
     answer: 'Quite pleasant more sunny , hope you have a good day',
   },
   {
     question: 'Thank you',
     answer: 'Welcome :) hope i was able to guide you',
-  },
-  {
-    question: 'How to use Font simply tool?',
-    answer: 'Open the tool , Upload the text which you want to read and click the button.',
-  },
+  }, 
   {
     question: 'how to login in ?',
     answer: 'You have already login as you have access to website enter the url of the website in your browser',

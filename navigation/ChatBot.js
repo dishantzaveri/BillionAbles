@@ -19,7 +19,7 @@ const ChatBot = () => {
 
   const getAnswer = q => {
     for (let i = 0; i < data.length; i++) {
-      if (data[i].question.includes(q.toLowerCase())) {
+      if (data[i].question.toLowerCase().includes(q.toLowerCase())) {
         chats = [...chats, {msg: data[i].answer, incomingMsg: true}];
         setChatList([...chats].reverse());
         return;
