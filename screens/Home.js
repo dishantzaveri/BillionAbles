@@ -27,7 +27,7 @@ const Home = ({navigation}) => {
     {
       id: 4,
       title: 'Dyslexia',
-      navigation: 'Scan To Text',
+      navigation: 'Visually Impaired',
       image:
         'https://i.pinimg.com/736x/b1/fd/4f/b1fd4f521e136fb90b791903d15cabbf.jpg',
     },

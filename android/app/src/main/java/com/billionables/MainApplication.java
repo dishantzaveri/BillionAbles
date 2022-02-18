@@ -10,7 +10,6 @@ import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
 import java.lang.reflect.InvocationTargetException;
 import com.imagepicker.ImagePickerPackage;
-import com.reactlibrary.TesseractOcrPackage;
 import net.no_mad.tts.TextToSpeechPackage;
 import java.util.List;
 

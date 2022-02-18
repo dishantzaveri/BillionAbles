@@ -34,7 +34,6 @@
     "react-native-vector-icons": "^9.1.0",
     "reanimated-bottom-sheet": "^1.0.0-alpha.22",    
     "react-native-image-picker": "^4.7.3",
-    "react-native-tesseract-ocr": "^2.0.3",
     "react-native-tts": "^4.1.0"
   },
   "devDependencies": {
