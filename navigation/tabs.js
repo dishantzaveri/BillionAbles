@@ -4,6 +4,8 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import Speechtotext from './Speechtotext.js';
 
 import Profile from '../screens/Profile';
+import Home from '../screens/Home.js';
+import HomeNavigation from '../screens/HomeNavigation.js';
 
 const Tab = createBottomTabNavigator();
 
@@ -12,14 +14,14 @@ const Tabs = ({route}) => {
   return (
     <Tab.Navigator initialRouteName="Profile" activeColor="#fff">
       <Tab.Screen
-        name="Speechtotext"
-        component={Speechtotext}
+        name="HomeNavigation"
+        component={HomeNavigation}
         options={{
           headerShown: false,
-          tabBarLabel: 'Speechtotext',
+          tabBarLabel: 'HomeNavigation',
           tabBarColor: '#1f65ff',
           tabBarIcon: ({color}) => (
-            <Icon name="ios-notifications" color={color} size={26} />
+            <Icon name="ios-home" color={color} size={26} />
           ),
         }}
       />

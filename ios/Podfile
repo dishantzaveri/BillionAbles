@@ -12,6 +12,10 @@ target 'BillionAbles' do
     :hermes_enabled => false
   )
 
+  pod 'TextToSpeech', :path => '../node_modules/react-native-tts'
+
+  pod 'react-native-tesseract-ocr', :path => '../node_modules/react-native-tesseract-ocr'
+
   target 'BillionAblesTests' do
     inherit! :complete
     # Pods for testing
