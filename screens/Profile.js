@@ -16,7 +16,7 @@ const Profile = ({navigation, route}) => {
     <View style={styles.container}>
      
        <View>
-       <TouchableOpacity style={styles.commandButton} onPress={() => {}}>
+       <TouchableOpacity style={styles.commandButton} onPress={() => navigation.navigate('ChatBot')} >
           <Text style={styles.panelButtonTitle}>Chat With Us</Text>
         </TouchableOpacity>
 

@@ -28,7 +28,7 @@ const ChatBot = () => {
 
     chats = [
       ...chats,
-      {msg: "Didn't recognise tour question", incomingMsg: true},
+      {msg: "Didn't recognise your question", incomingMsg: true},
     ];
     setChatList([...chats].reverse());
     return;

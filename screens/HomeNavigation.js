@@ -16,7 +16,6 @@ const HomeNavigation = () => {
       <Stack.Screen name="SpeechToText" component={Speechtotext} />
       <Stack.Screen name="Text To Speech" component={TextToSpeech} />
       <Stack.Screen name="Object Detection" component={ObjectDetection} />
-      {/* <Stack.Screen name="Scan To Text" component={ScanToText} /> */}
     </Stack.Navigator>
   );
 };
