@@ -1,30 +1,30 @@
-import React, {useState, useContext} from 'react';
-import {View, StyleSheet, TouchableOpacity} from 'react-native';
-import {Text} from 'react-native-paper';
+import React, { useState, useContext } from 'react';
+import { View, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text } from 'react-native-paper';
 import Background from '../components/Background';
 import Button from '../components/Button';
 import Header from '../components/Header';
 import TextInput from '../components/TextInput';
-import {theme} from '../core/theme';
-import {emailValidator} from '../helpers/emailValidator';
-import {passwordValidator} from '../helpers/passwordValidator';
-import {nameValidator} from '../helpers/nameValidator';
-import {AuthContext} from '../navigation/AuthProvider.android.js';
+import { theme } from '../core/theme';
+import { emailValidator } from '../helpers/emailValidator';
+import { passwordValidator } from '../helpers/passwordValidator';
+import { nameValidator } from '../helpers/nameValidator';
+import { AuthContext } from '../navigation/AuthProvider.android.js';
 
-export default function LogInScreen({navigation}) {
-  const [name, setName] = useState({value: '', error: ''});
-  const [email, setEmail] = useState({value: '', error: ''});
-  const [password, setPassword] = useState({value: '', error: ''});
-  const {login,} = useContext(AuthContext);
+export default function LogInScreen({ navigation }) {
+  const [name, setName] = useState({ value: '', error: '' });
+  const [email, setEmail] = useState({ value: '', error: '' });
+  const [password, setPassword] = useState({ value: '', error: '' });
+  const { login, } = useContext(AuthContext);
 
   const onSignUpPressed = () => {
     const nameError = nameValidator(name);
     const emailError = emailValidator(email);
     const passwordError = passwordValidator(password);
     if (passwordError || emailError || nameError) {
-      setName({...name, error: nameError});
-      setEmail({...email, error: emailError});
-      setPassword({...password, error: passwordError});
+      setName({ ...name, error: nameError });
+      setEmail({ ...email, error: emailError });
+      setPassword({ ...password, error: passwordError });
       return;
     }
   };
@@ -64,17 +64,17 @@ export default function LogInScreen({navigation}) {
         autoCompleteType="password"
         keyboardType="default"
       />
-      <Button mode="contained" onPress={onSignUpPressed} style={{marginTop: 6}}>
+      <Button mode="contained" onPress={onSignUpPressed} style={{ marginTop: 6 }}>
         Validate
       </Button>
       <Button
         mode="contained"
         onPress={() => login(email, password)}
-        style={{marginTop: 6}}>
+        style={{ marginTop: 6 }}>
         LogIn
       </Button>
       <View style={styles.row}>
-        <Text>Don't have an account ,register. </Text>
+        <Text>Don't have an account?</Text>
         <TouchableOpacity onPress={() => navigation.navigate('SignUpScreen')}>
           <Text style={styles.link}>SignUp</Text>
         </TouchableOpacity>
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
     marginTop: 40,
   },
   button: {
-    backgroundColor: '#0782F9',
+    backgroundColor: '#28FF64',
     width: '100%',
     padding: 15,
     borderRadius: 10,
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
   buttonOutline: {
     backgroundColor: 'white',
     marginTop: 5,
-    borderColor: '#0782F9',
+    borderColor: '#0F092D',
     borderWidth: 2,
   },
   buttonText: {
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   buttonOutlineText: {
-    color: '#0782F9',
+    color: '#0F092D',
     fontWeight: '700',
     fontSize: 16,
   },

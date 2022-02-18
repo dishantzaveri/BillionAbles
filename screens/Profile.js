@@ -17,7 +17,7 @@ const Profile = ({navigation, route}) => {
      
        <View>
        <TouchableOpacity style={styles.commandButton} onPress={() => {}}>
-          <Text style={styles.panelButtonTitle}>Submit</Text>
+          <Text style={styles.panelButtonTitle}>Chat With Us</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.commandButton} onPress={() => logout()}>
