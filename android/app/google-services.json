@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "347351551446",
+    "project_id": "billion-ables-6296c",
+    "storage_bucket": "billion-ables-6296c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:347351551446:android:a91afef2398e3861bf6877",
+        "android_client_info": {
+          "package_name": "com.billionables"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "347351551446-9dbkaudkr2guorb7bcdtj1coq52ac281.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqvxoQE7x3SOROI2nYcfxT0n-gVnZkekM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "347351551446-9dbkaudkr2guorb7bcdtj1coq52ac281.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
