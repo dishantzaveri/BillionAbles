@@ -31,7 +31,7 @@ export default function LogInScreen({navigation}) {
 
   return (
     <Background>
-      <Header>Billion Ables</Header>
+      <Header>BILLION ABLES</Header>
       <TextInput
         label="Name"
         returnKeyType="next"
