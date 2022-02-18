@@ -12,10 +12,12 @@ target 'BillionAbles' do
     :hermes_enabled => false
   )
 
+  pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen'
   pod 'TextToSpeech', :path => '../node_modules/react-native-tts'
 
   pod 'react-native-tesseract-ocr', :path => '../node_modules/react-native-tesseract-ocr'
 
+  pod 'react-native-image-picker', :path => '../node_modules/react-native-image-picker'
   target 'BillionAblesTests' do
     inherit! :complete
     # Pods for testing
