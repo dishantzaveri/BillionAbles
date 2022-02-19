@@ -1,12 +1,14 @@
-import {StyleSheet, Text, View} from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
+import { createStackNavigator } from '@react-navigation/stack';
 import Home from './Home';
 import Speechtotext from '../navigation/Speechtotext.js';
 import VisuallyImpaired from './VisuallyImpaired';
 import TextToSpeech from './TextToSpeech';
 import ObjectDetection from './ObjectDetection';
 import ScanToText from "./ScanToText";
+import CallScreen from '../screens/CallScreen';
+import onEnter from '../screens/EnterScreen'
 const HomeNavigation = () => {
   const Stack = createStackNavigator();
   return (
@@ -16,6 +18,8 @@ const HomeNavigation = () => {
       <Stack.Screen name="SpeechToText" component={Speechtotext} />
       <Stack.Screen name="Text To Speech" component={TextToSpeech} />
       <Stack.Screen name="Object Detection" component={ObjectDetection} />
+      <Stack.Screen name="CallScreen" component={CallScreen} />
+      <Stack.Screen name="EnterScreen" component={onEnter} />
     </Stack.Navigator>
   );
 };

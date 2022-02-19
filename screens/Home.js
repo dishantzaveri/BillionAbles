@@ -26,8 +26,8 @@ const Home = ({navigation}) => {
     },
     {
       id: 4,
-      title: 'Dyslexia',
-      navigation: 'Visually Impaired',
+      title: 'Counselling',
+      navigation: 'EnterScreen',
       image:
         'https://i.pinimg.com/736x/b1/fd/4f/b1fd4f521e136fb90b791903d15cabbf.jpg',
     },

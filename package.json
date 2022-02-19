@@ -23,6 +23,8 @@
     "react-native": "0.67.2",
     "react-native-gesture-handler": "^2.2.0",
     "react-native-image-crop-picker": "^0.37.3",
+    "react-native-image-picker": "^4.7.3",
+    "react-native-modal": "^13.0.0",
     "react-native-modal-datetime-picker": "^13.0.1",
     "react-native-paper": "^4.11.2",
     "react-native-reanimated": "^2.4.1",
@@ -31,10 +33,10 @@
     "react-native-splash-screen": "^3.3.0",
     "react-native-status-bar-height": "^2.6.0",
     "react-native-touch-id": "^4.4.1",
+    "react-native-tts": "^4.1.0",
     "react-native-vector-icons": "^9.1.0",
-    "reanimated-bottom-sheet": "^1.0.0-alpha.22",    
-    "react-native-image-picker": "^4.7.3",
-    "react-native-tts": "^4.1.0"
+    "react-native-webrtc": "^1.94.1",
+    "reanimated-bottom-sheet": "^1.0.0-alpha.22"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

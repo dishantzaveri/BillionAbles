@@ -20,6 +20,7 @@ export default function TabNavigation({userinfo}) {
           }}
         />
          <Stack.Screen name="ChatBot" component={ChatBot} />
+         
       </Stack.Navigator>
     </NavigationContainer>
   );
