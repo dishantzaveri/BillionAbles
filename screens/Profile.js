@@ -6,27 +6,96 @@ import {
   ImageBackground,
   TextInput,
   StyleSheet,
+  Image,
+  ScrollView,
 } from 'react-native';
 import {AuthContext} from '../navigation/AuthProvider.android.js';
 
 const Profile = ({navigation, route}) => {
-  const { logout} = useContext(AuthContext); 
+  const {logout} = useContext(AuthContext);
 
   return (
     <View style={styles.container}>
-     
-       <View>
-       <TouchableOpacity style={styles.commandButton} onPress={() => navigation.navigate('ChatBot')} >
-          <Text style={styles.panelButtonTitle}>Chat With Us</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.commandButton} onPress={() => logout()}>
-          <Text style={styles.panelButtonTitle}>Logout</Text>
-        </TouchableOpacity>
-       
+      <ScrollView>
+        <View
+          style={{
+            width: '100%',
+            height: 250,
+            elevation: 3,
+            borderBottomLeftRadius: 30,
+            borderBottomRightRadius: 30,
+          }}>
+          <Image
+            source={{
+              uri: 'https://images.indianexpress.com/2019/02/special.jpg',
+            }}
+            style={{
+              flex: 1,
+              resizeMode:"cover",
+              elevation: 3,
+              borderBottomLeftRadius: 30,
+              borderBottomRightRadius: 30,
+            }}
+          />
         </View>
-        
-    
+        <Text
+          style={{
+            fontSize: 25,
+            fontWeight: 'bold',
+            marginLeft: 20,
+            color: 'black',
+            marginTop: 20,
+          }}>
+          About Us
+        </Text>
+        <View
+          style={{flexDirection: 'row', alignItems: 'center', marginTop: 10}}>
+          <Image
+            style={styles.logo}
+            source={require('../assets/billionables.png')}
+          />
+          <Text
+            style={{
+              fontSize: 30,
+              fontWeight: 'bold',
+              marginLeft: 20,
+              color:"#0F092D"
+            }}>
+            Billion Ables
+          </Text>
+        </View>
+        <View style={{alignItems: 'center', paddingHorizontal: 20}}>
+          <Text
+            style={{
+              fontSize: 20,
+              fontFamily: 'sans-serif-medium',
+            }}>
+            We help to ensure that people with disabilities have equal
+            opportunities. Having a disability shouldn’t exclude someone from
+            the opportunity to be independent. We provide different features for
+            the poor differently-abled and help them with communication and to
+            overcome stress, anxiety, depression so that they overcome the
+            disability and live a normal life.
+          </Text>
+        </View>
+        <View style={{
+          flexDirection:"row",
+          marginVertical:10,
+          justifyContent:"space-around"
+        }} >
+          <TouchableOpacity
+            style={styles.commandButton}
+            onPress={() => navigation.navigate('ChatBot')}>
+            <Text style={styles.panelButtonTitle}>Chat With Us</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.commandButton}
+            onPress={() => logout()}>
+            <Text style={styles.panelButtonTitle}>Logout</Text>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
     </View>
   );
 };
@@ -40,9 +109,10 @@ const styles = StyleSheet.create({
   commandButton: {
     padding: 8,
     borderRadius: 10,
-    backgroundColor: '#FF6347',
+    backgroundColor: '#28FF64',
     alignItems: 'center',
-    marginTop: 10,
+    marginTop: 10,   
+    
   },
   panel: {
     padding: 20,
@@ -119,7 +189,6 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     color: '#05375a',
     fontSize: 20,
-
   },
   button: {
     backgroundColor: '#0782F9',
@@ -144,5 +213,10 @@ const styles = StyleSheet.create({
   },
   userBtnTxt: {
     color: '#2e64e5',
+  },
+  logo: {
+    height: 100,
+    width: 100,
+    borderRadius: 30,
   },
 });
