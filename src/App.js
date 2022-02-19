@@ -6,12 +6,13 @@ import ObjectDetection from "./screens/ObjectDetection";
 import SignDetection from "./screens/SignDetection";
 import SpeechToText from "./screens/SpeechToText";
 import TextToSpeech from "./screens/TextToSpeech";
+import PDFReader from "./screens/PDFReader";
 import { Home } from './screens/Home.jsx'
 import { VisuallyImpaired } from "./screens/VisuallyImpaired";
 import { DeafDumb } from "./screens/DeafDumb";
 import { Dyslexia } from "./screens/Dyslexia";
 import { DyslexiaReader } from "./screens/DyslexiaReader";
-import { PDFReader } from "./screens/PDFReader";
+import { Chat } from "./screens/Chat";
 function App() {
   return (
     <div className="App">
@@ -27,6 +28,7 @@ function App() {
           <Route path="/text_to_speech" element={<TextToSpeech />} />   
           <Route path="/object_detection" element={<ObjectDetection />} />     
           <Route path="/sign_detection" element={<SignDetection />} />    
+          <Route path="chat" element={<Chat />} />    
           <Route path="/login" element={<Login />} /> 
           <Route path="/signup" element={<SignUp />} /> 
         </Routes>

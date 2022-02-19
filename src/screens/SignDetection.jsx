@@ -2,8 +2,8 @@
 import React, { useRef, useEffect } from "react";
 import * as tf from "@tensorflow/tfjs";
 import Webcam from "react-webcam";
-import "../App.css";
-import {drawRect1} from "../utils/utilities"; 
+import { drawRect1 } from "../utils/utilities";
+import { Navbar } from "../components/Navbar";
 
 export default function SignDetection() {
   const webcamRef = useRef(null);
@@ -62,8 +62,10 @@ export default function SignDetection() {
   },[]);
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className='bg-green-200 min-h-screen'>
+      <Navbar />
+      <h1 className='text-5xl font-semibold mt-12 mb-8'>Sign Detection</h1>
+      <div className="flex justify-center items-center h-[70vh]">
         <Webcam
           ref={webcamRef}
           muted={true} 
@@ -94,7 +96,7 @@ export default function SignDetection() {
             height: 480,
           }}
         />
-      </header>
+      </div>
     </div>
   );
 }

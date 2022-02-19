@@ -1,53 +1,39 @@
-import React, { useRef, useState, useEffect } from "react";
-import * as tf from "@tensorflow/tfjs";
+import React, { useRef, useEffect } from "react";
 import * as cocossd from "@tensorflow-models/coco-ssd";
 import Webcam from "react-webcam";
 import { drawRect } from "../utils/utilities";
-import "./ObjectDetection.css";
+import { Navbar } from "../components/Navbar";
 function ObjectDetection() {
   const webcamRef = useRef(null);
   const canvasRef = useRef(null);
 
-  // Main function
   const runCoco = async () => {
-    // 3. TODO - Load network
-    // e.g. const net = await cocossd.load();
     const net = await cocossd.load();
-    //  Loop and detect hands
     setInterval(() => {
       detect(net);
     }, 10);
   };
 
   const detect = async (net) => {
-    // Check data is available
     if (
       typeof webcamRef.current !== "undefined" &&
       webcamRef.current !== null &&
       webcamRef.current.video.readyState === 4
     ) {
-      // Get Video Properties
       const video = webcamRef.current.video;
       const videoWidth = webcamRef.current.video.videoWidth;
       const videoHeight = webcamRef.current.video.videoHeight;
 
-      // Set video width
       webcamRef.current.video.width = videoWidth;
       webcamRef.current.video.height = videoHeight;
 
-      // Set canvas height and width
       canvasRef.current.width = videoWidth;
       canvasRef.current.height = videoHeight;
 
-      // 4. TODO - Make Detections
-      // e.g. const obj = await net.detect(video);
       const obj = await net.detect(video);
       console.log(obj);
-      // Draw mesh
       const ctx = canvasRef.current.getContext("2d");
 
-      // 5. TODO - Update drawing utility
-      // drawSomething(obj, ctx)
       drawRect(obj, ctx);
     }
   };
@@ -56,8 +42,10 @@ function ObjectDetection() {
     runCoco();
   }, []);
   return (
-    <div>
-      <header className="Object-header">
+    <div className="bg-green-200 min-h-screen">
+      <Navbar />
+      <h1 className='text-5xl font-semibold mt-12 mb-8'>Object Detection</h1>
+      <div className="flex justify-center items-center h-[70vh]">
         <Webcam
           ref={webcamRef}
           muted={true}
@@ -88,7 +76,7 @@ function ObjectDetection() {
             height: 480,
           }}
         />
-      </header>
+      </div>
     </div>
   );
 }

@@ -35,6 +35,9 @@ export const Navbar = () => {
             <Link className='text-lg font-semibold text-[#0F092D]' to="/dyslexia">
               Dyslexia
             </Link>
+            <Link className='text-lg font-semibold text-[#0F092D]' to="/chat">
+              Chat
+            </Link>
             <Link to='/' className='text-lg font-semibold text-red-500' onClick={() => logOut()} >Logout</Link>
           </>
         ) : (
