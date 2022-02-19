@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import Profile from '../screens/Profile';
 import HomeNavigation from '../screens/HomeNavigation.js';
 import MentalHealthNavigation from "../screens/MentalHealthNavigation";
+import Donors from '../screens/Donors';
 
 const Tab = createBottomTabNavigator();
 
@@ -33,6 +34,19 @@ const Tabs = ({route}) => {
           tabBarColor: '#1f65ff',
           tabBarIcon: ({color}) => (
             <Icon name="md-person-add-sharp" color={color} size={26} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        initialParams={{text: email}}
+        name="Donate"
+        component={Donors}
+        options={{
+          headerShown: false,
+          tabBarLabel: 'Profile',
+          tabBarColor: '#d02860',
+          tabBarIcon: ({color}) => (
+            <Icon name="ios-person" color={color} size={26} />
           ),
         }}
       />

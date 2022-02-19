@@ -18,6 +18,8 @@ target 'BillionAbles' do
   pod 'react-native-image-picker', :path => '../node_modules/react-native-image-picker'
   pod 'RNSoundPlayer', :path => '../node_modules/react-native-sound-player'
 
+  pod 'RNSVG', :path => '../node_modules/react-native-svg'
+
   target 'BillionAblesTests' do
     inherit! :complete
     # Pods for testing
