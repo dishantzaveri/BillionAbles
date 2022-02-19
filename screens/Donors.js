@@ -15,43 +15,37 @@ const Donors = () => {
   const [selectedValue, setSelectedValue] = useState('Blood Group');
   const [name, setName] = useState('');
   const [mobile, setMobile] = useState('');
-  const [donorData,setDonorData] = useState([]);
-  // useEffect(() => {
+  const [donorData, setDonorData] = useState([]);
+  useEffect(() => {
+    firestore()
+      .collection('donors')
+      .onSnapshot(querySnapshot => {
+        setDonorData(
+          querySnapshot.docs.map(doc => ({
+            data: doc.data(),
+          })),
+        );
+      });
+  }, []);
+
+  // const getData = () => {
   //   const data = [];
   //   firestore()
-  //     .collection('donors')      
-  //     .onSnapshot(querySnapshot => {
-  //       console.log('Total users: ', querySnapshot.size);
+  //     .collection('donors')
+  //     .get()
+  //     .then(querySnapshot => {
   //       querySnapshot.forEach(documentSnapshot => {
   //         console.log(
   //           'User ID: ',
   //           documentSnapshot.id,
   //           documentSnapshot.data(),
   //         );
-  //         data.push(documentSnapshot.data());
+  //         setDonorData(...donorData,documentSnapshot.data());
   //       });
   //     });
-  //     setDonorData(data);
-  // }, []);
+  //   console.log(data);
 
-  const getData = () => {
-    const data = [];
-    firestore()
-      .collection('donors')      
-      .get()
-      .then(querySnapshot => {
-        console.log('Total users: ', querySnapshot.size);
-        querySnapshot.forEach(documentSnapshot => {
-          console.log(
-            'User ID: ',
-            documentSnapshot.id,
-            documentSnapshot.data(),
-          );
-          data.push(documentSnapshot.data());
-        });
-      });
-      setDonorData(data);
-  }
+  // };
 
   const addData = () => {
     firestore()
@@ -123,19 +117,35 @@ const Donors = () => {
           </Picker>
           <Button onPress={addData} title="Submit" />
         </View>
-        <Button onPress={getData} title="Show Donors" />
-        <View>
-            {
-              donorData ? (
-              donorData.map((data,i) => (
-                <Text key={i}>{data.name}</Text>
-              ))
-              ):(
-                null
-              )
-            }
+        {/* <Button onPress={getData} title="Show Donors" /> */}
+        <View style={{
+          padding:20
+        }} >
+          <Text style={{
+            fontSize:20,
+            marginBottom:20
+          }} >Donors</Text>
+          {donorData?.map((data, i) => (
+            <View key={i} style={{
+              padding:20,
+              backgroundColor:"white",
+              elevation:3,
+              flexDirection:"row",
+              justifyContent:"space-between",
+              marginVertical:10
+            }} >
+              <Text style={{
+                fontSize:16
+              }} >{data.data.name}</Text>
+              <Text style={{
+                fontSize:16
+              }}>{data.data.group}</Text>
+              <Text style={{
+                fontSize:16
+              }}>{data.data.mobile}</Text>
+            </View>
+          ))}
         </View>
-        
       </ScrollView>
     </View>
   );

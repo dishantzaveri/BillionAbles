@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import Profile from '../screens/Profile';
 import HomeNavigation from '../screens/HomeNavigation.js';
 import MentalHealthNavigation from "../screens/MentalHealthNavigation";
-// import Donors from '../screens/Donors';
+import Donors from '../screens/Donors';
 
 const Tab = createBottomTabNavigator();
 
@@ -37,7 +37,7 @@ const Tabs = ({route}) => {
           ),
         }}
       />
-      {/* <Tab.Screen
+      <Tab.Screen
         initialParams={{text: email}}
         name="Donate"
         component={Donors}
@@ -49,7 +49,7 @@ const Tabs = ({route}) => {
             <Icon name="ios-person" color={color} size={26} />
           ),
         }}
-      /> */}
+      />
 
       <Tab.Screen
         initialParams={{text: email}}
