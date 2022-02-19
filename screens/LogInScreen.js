@@ -31,11 +31,12 @@ export default function LogInScreen({ navigation }) {
 
   return (
     <Background>
-      <Header>BILLION ABLES</Header>
-      <TextInput
+      <Text style={styles.header}>Billion Ables</Text>
+      <TextInput 
         label="Name"
+        color='#28FF64'
         returnKeyType="next"
-        value={name}
+        value={name }
         onChangeText={text => setName(text)}
         error={!!name.error}
         errorText={name.error}
@@ -74,9 +75,9 @@ export default function LogInScreen({ navigation }) {
         LogIn
       </Button>
       <View style={styles.row}>
-        <Text>Don't have an account?</Text>
+        <Text style={styles.best}>Don't have an account?</Text>
         <TouchableOpacity onPress={() => navigation.navigate('SignUpScreen')}>
-          <Text style={styles.link}>SignUp</Text>
+          <Text style={styles.link}>  SignUp</Text>
         </TouchableOpacity>
       </View>
     </Background>
@@ -87,6 +88,18 @@ const styles = StyleSheet.create({
   row: {
     flexDirection: 'row',
     marginTop: 4,
+    color:'#FFFFFF'
+  },
+  best: {
+    
+    color:'#FFFFFF'
+  },
+ header: {
+    
+  color: theme.colors.primary,
+  fontWeight: '700',
+    fontSize: 30,
+    fontFamily:'Redressed-Regular'
   },
   link: {
     fontWeight: 'bold',

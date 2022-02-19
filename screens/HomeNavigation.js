@@ -12,13 +12,13 @@ const HomeNavigation = () => {
   const Stack = createStackNavigator();
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="Visually Impaired" component={VisuallyImpaired} />
-      <Stack.Screen name="SpeechToText" component={Speechtotext} />
-      <Stack.Screen name="Text To Speech" component={TextToSpeech} />
-      <Stack.Screen name="Object Detection" component={ObjectDetection} />
-      <Stack.Screen name="CallScreen" component={CallScreen} />
-      <Stack.Screen name="EnterScreen" component={onEnter} />
+      <Stack.Screen options={{headerShown: false}}  name="Home" component={Home} />
+      <Stack.Screen options={{headerShown: false}} name="Visually Impaired" component={VisuallyImpaired} />
+      <Stack.Screen options={{headerShown: false}} name="SpeechToText" component={Speechtotext} />
+      <Stack.Screen options={{headerShown: false}} name="Text To Speech" component={TextToSpeech} />
+      <Stack.Screen options={{headerShown: false}}name="Object Detection" component={ObjectDetection} />
+      <Stack.Screen  options={{headerShown: false}} name="CallScreen" component={CallScreen} />
+      <Stack.Screen options={{headerShown: false}} name="EnterScreen" component={onEnter} />
     </Stack.Navigator>
   );
 };

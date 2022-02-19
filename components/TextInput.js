@@ -25,18 +25,24 @@ const styles = StyleSheet.create({
   container: {
     width: '100%',
     marginVertical: 12,
+    color:'#28FF64',
+    borderColor:'#FFFFFF',
+    backgroundColor: '#FFFFFF',
+
+   
   },
   input: {
     backgroundColor: theme.colors.surface,
   },
   description: {
     fontSize: 13,
-    color: theme.colors.secondary,
+    backgroundColor: '#28FF64',
+    color:'#28FF64',
     paddingTop: 8,
   },
   error: {
     fontSize: 13,
-    color: theme.colors.error,
+    color: '#28FF64',
     paddingTop: 8,
   },
 })

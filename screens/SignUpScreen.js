@@ -82,9 +82,9 @@ export default function SignUpScreen({navigation}) {
         Sign Up
       </Button>
       <View style={styles.row}>
-        <Text>Already have an account? </Text>
+        <Text style={styles.best}>Already have an account? </Text>
         <TouchableOpacity onPress={() => navigation.navigate('LogInScreen')}>
-          <Text style={styles.link}>Login</Text>
+          <Text style={styles.link}> Login</Text>
         </TouchableOpacity>
       </View>
     </Background>
@@ -96,6 +96,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginTop: 4,
   },
+  best: {
+    
+    color:'#FFFFFF'
+  },
+
   link: {
     fontWeight: 'bold',
     color: theme.colors.primary,
