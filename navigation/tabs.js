@@ -1,11 +1,9 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
-import Speechtotext from './Speechtotext.js';
-
 import Profile from '../screens/Profile';
-import Home from '../screens/Home.js';
 import HomeNavigation from '../screens/HomeNavigation.js';
+import MentalHealthNavigation from "../screens/MentalHealthNavigation";
 
 const Tab = createBottomTabNavigator();
 
@@ -25,6 +23,20 @@ const Tabs = ({route}) => {
           ),
         }}
       />
+
+      <Tab.Screen  
+        name="MentalHealthNavigation"
+        component={MentalHealthNavigation}
+        options={{
+          headerShown: false,
+          tabBarLabel: 'MentalHealthNavigation',
+          tabBarColor: '#1f65ff',
+          tabBarIcon: ({color}) => (
+            <Icon name="md-person-add-sharp" color={color} size={26} />
+          ),
+        }}
+      />
+
       <Tab.Screen
         initialParams={{text: email}}
         name="Profile"

@@ -6,7 +6,6 @@ import Speechtotext from '../navigation/Speechtotext.js';
 import VisuallyImpaired from './VisuallyImpaired';
 import TextToSpeech from './TextToSpeech';
 import ObjectDetection from './ObjectDetection';
-import ScanToText from "./ScanToText";
 import CallScreen from '../screens/CallScreen';
 import onEnter from '../screens/EnterScreen'
 const HomeNavigation = () => {

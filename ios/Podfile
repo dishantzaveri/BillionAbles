@@ -16,6 +16,8 @@ target 'BillionAbles' do
   pod 'TextToSpeech', :path => '../node_modules/react-native-tts'
 
   pod 'react-native-image-picker', :path => '../node_modules/react-native-image-picker'
+  pod 'RNSoundPlayer', :path => '../node_modules/react-native-sound-player'
+
   target 'BillionAblesTests' do
     inherit! :complete
     # Pods for testing
