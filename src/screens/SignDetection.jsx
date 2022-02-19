@@ -1,66 +1,72 @@
-import React, { useRef, useState, useEffect } from "react";
+// Import dependencies
+import React, { useRef, useEffect } from "react";
 import * as tf from "@tensorflow/tfjs";
-import * as cocossd from "@tensorflow-models/coco-ssd";
 import Webcam from "react-webcam";
-import { drawRect } from "../utils/utilities";
-import "./ObjectDetection.css";
-function ObjectDetection() {
+import "../App.css";
+import {drawRect1} from "../utils/utilities"; 
+
+export default function SignDetection() {
   const webcamRef = useRef(null);
   const canvasRef = useRef(null);
 
-  // Main function
   const runCoco = async () => {
-    // 3. TODO - Load network
-    // e.g. const net = await cocossd.load();
-    const net = await cocossd.load();
-    //  Loop and detect hands
+    const net = await tf.loadGraphModel('https://tensorflowjsrealtimemodel.s3.au-syd.cloud-object-storage.appdomain.cloud/model.json')
+    
     setInterval(() => {
       detect(net);
-    }, 10);
+    }, 16.7);
   };
 
   const detect = async (net) => {
-    // Check data is available
     if (
       typeof webcamRef.current !== "undefined" &&
       webcamRef.current !== null &&
       webcamRef.current.video.readyState === 4
     ) {
-      // Get Video Properties
       const video = webcamRef.current.video;
       const videoWidth = webcamRef.current.video.videoWidth;
       const videoHeight = webcamRef.current.video.videoHeight;
 
-      // Set video width
       webcamRef.current.video.width = videoWidth;
       webcamRef.current.video.height = videoHeight;
 
-      // Set canvas height and width
       canvasRef.current.width = videoWidth;
       canvasRef.current.height = videoHeight;
 
-      // 4. TODO - Make Detections
-      // e.g. const obj = await net.detect(video);
-      const obj = await net.detect(video);
-      console.log(obj);
-      // Draw mesh
-      const ctx = canvasRef.current.getContext("2d");
+      const img = tf.browser.fromPixels(video)
+      const resized = tf.image.resizeBilinear(img, [640,480])
+      const casted = resized.cast('int32')
+      const expanded = casted.expandDims(0)
+      const obj = await net.executeAsync(expanded)
+      console.log(obj)
 
-      // 5. TODO - Update drawing utility
-      // drawSomething(obj, ctx)
-      drawRect(obj, ctx);
+      const boxes = await obj[1].array()
+      const classes = await obj[2].array()
+      const scores = await obj[4].array()
+      
+      const ctx = canvasRef.current.getContext("2d");
+  
+      requestAnimationFrame(()=>{drawRect1(boxes[0], classes[0], scores[0], 0.8, videoWidth, videoHeight, ctx)}); 
+
+      tf.dispose(img)
+      tf.dispose(resized)
+      tf.dispose(casted)
+      tf.dispose(expanded)
+      tf.dispose(obj)
+
     }
   };
 
-  useEffect(() => {
-    runCoco();
-  }, []);
+  useEffect(()=>{
+    runCoco()
+  },[]);
+
   return (
-    <div>
-      <header className="Object-header">
+    <div className="App">
+      <header className="App-header">
         <Webcam
           ref={webcamRef}
-          muted={true}
+          muted={true} 
           style={{
             position: "absolute",
             marginLeft: "auto",
@@ -92,5 +98,3 @@ function ObjectDetection() {
     </div>
   );
 }
-
-export default ObjectDetection;
