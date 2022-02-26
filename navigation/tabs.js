@@ -17,7 +17,7 @@ const Tabs = ({route}) => {
         component={HomeNavigation}
         options={{
           headerShown: false,
-          tabBarLabel: 'HomeNavigation',
+          tabBarLabel: 'Features',
           tabBarColor: '#1f65ff',
           tabBarIcon: ({color}) => (
             <Icon name="ios-home" color={color} size={26} />
@@ -30,7 +30,7 @@ const Tabs = ({route}) => {
         component={MentalHealthNavigation}
         options={{
           headerShown: false,
-          tabBarLabel: 'MentalHealthNavigation',
+          tabBarLabel: 'Mental Health',
           tabBarColor: '#1f65ff',
           tabBarIcon: ({color}) => (
             <Icon name="md-person-add-sharp" color={color} size={26} />
@@ -43,7 +43,7 @@ const Tabs = ({route}) => {
         component={Donors}
         options={{
           headerShown: false,
-          tabBarLabel: 'Profile',
+          tabBarLabel: 'Donate',
           tabBarColor: '#d02860',
           tabBarIcon: ({color}) => (
             <Icon name="ios-person" color={color} size={26} />

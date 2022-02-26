@@ -105,6 +105,7 @@ export default Profile;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor:'white'
   },
   commandButton: {
     padding: 8,

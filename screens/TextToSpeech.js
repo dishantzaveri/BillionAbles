@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import React, {useEffect, useState} from 'react';
 import Tts from 'react-native-tts';
-const TextToSpeech = () => {
+const TextToSpeech = ({navigation}) => {
   const [text, setText] = useState('');
 
   useEffect(() => {

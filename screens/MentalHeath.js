@@ -73,9 +73,9 @@ const MentalHeath = props => {
   };
 
   return (
-    <View>
-      <ScrollView>
-        <View>
+    <View >
+      <ScrollView >
+        <View >
           <View style={styles.tracksContainer}>
             <Text style={styles.trackTitle}>Tracks to refresh your mood!</Text>
             <FlatList
@@ -289,6 +289,10 @@ const styles = StyleSheet.create({
     paddingTop: 0,
     paddingLeft: 20,
     position: 'relative',
+  },
+   container:{
+    backgroundColor:'white',
+    flex:1
   },
   trackTitle: {
     fontSize: 18,

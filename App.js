@@ -12,7 +12,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setHideSplash(true);
-    }, 500); // amount of time the splash is shown from the time component is rendered
+    }, 10); 
   }, []);
   
   useEffect(() => {

@@ -63,7 +63,7 @@ const Donors = () => {
     setSelectedValue('Blood Group');
   };
   return (
-    <View>
+    <View style={styles.container}>
       <ScrollView>
         <View
           style={{
@@ -71,8 +71,8 @@ const Donors = () => {
           }}>
           <Text
             style={{
-              fontSize: 20,
-              color: 'red',
+              fontSize: 30,
+                color: '#28FF64',
               alignSelf: 'center',
             }}>
             Donate Blood
@@ -115,7 +115,11 @@ const Donors = () => {
             <Picker.Item label="AB+" value="AB+" />
             <Picker.Item label="AB-" value="AB-" />
           </Picker>
-          <Button onPress={addData} title="Submit" />
+          <View style={{
+        color: '#28FF64',
+        }} >
+          <Button  onPress={addData} title="Submit" />
+         </View>
         </View>
         {/* <Button onPress={getData} title="Show Donors" /> */}
         <View style={{
@@ -160,5 +164,9 @@ const styles = StyleSheet.create({
     marginLeft: 60,
     marginRight: 60,
     marginBottom: 10,
+  },
+  container:{
+    backgroundColor:'white',
+    flex:1
   },
 });

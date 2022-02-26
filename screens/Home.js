@@ -20,7 +20,7 @@ const Home = ({navigation}) => {
     {
       id: 3,
       title: 'Dumb',
-      navigation: 'Visually Impaired',
+      navigation: 'TextToSpeech',
       image:
         'https://w7.pngwing.com/pngs/319/68/png-transparent-british-sign-language-language-interpretation-american-sign-language-others-english-hand-sign-thumbnail.png',
     },
@@ -33,7 +33,7 @@ const Home = ({navigation}) => {
     },
   ];
   return (
-    <View>
+    <View style={styles.container}>
       <View style={styles.homeCards}>
         {data.map(card => (
           <Card
@@ -58,4 +58,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+
+  container:{
+    backgroundColor:'white',
+    flex:1
+  }
 });

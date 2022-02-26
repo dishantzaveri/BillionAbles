@@ -12,9 +12,13 @@ import React from 'react';
 const VisuallyImpaired = ({navigation}) => {
   return (
     <View>
-      <TouchableOpacity style={styles.options} onPress={() => navigation.navigate('Text To Speech')}>
+      <TouchableOpacity style={styles.options} onPress={() => navigation.navigate('TextToSpeech')}>
         <Text style={styles.optionsTitle}>Text To Speech</Text>
         <Text style={styles.optionsDesc}>This feature will convert the text given by the user into speech</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.options} onPress={() => navigation.navigate('SpeechToText')} >
+        <Text style={styles.optionsTitle}>Speech To Text</Text>
+        <Text style={styles.optionsDesc}>This feature will convert the speech given by the user into text</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.options} onPress={() => navigation.navigate('Object Detection')} >
         <Text style={styles.optionsTitle}>Object Detection</Text>
