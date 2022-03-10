@@ -104,11 +104,6 @@ const MentalHeath = props => {
               </Text>
             </View>
           </View>
-
-          {/* Header End */}
-
-          {/* Your Daily Read */}
-
           <View>
             <FlatList
               showsHorizontalScrollIndicator={false}

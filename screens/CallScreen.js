@@ -18,12 +18,11 @@ import {
   mediaDevices,
   registerGlobals,
 } from 'react-native-webrtc';
-// import {acc} from 'react-native-reanimated';
 
 const STUN_SERVER = 'stun:webrtc.skyrockets.space:3478';
 const SOCKET_URL = 'wss://webrtc.skyrockets.space:8080';
 
-export default function CallScreen({navigation, ...props}) {
+export default function CallSceen({navigation, ...props}) {
   const [userId, setUserId] = useState('');
   const [socketActive, setSocketActive] = useState(false);
   const [calling, setCalling] = useState(false);
