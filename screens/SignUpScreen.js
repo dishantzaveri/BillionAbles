@@ -16,7 +16,7 @@ export default function SignUpScreen({navigation}) {
   const [name, setName] = useState({value: '', error: ''});
   const [email, setEmail] = useState({value: '', error: ''});
   const [password, setPassword] = useState({value: '', error: ''});
-  const {register} = useContext(AuthContext);
+  // const {register} = useContext(AuthContext);
 
   const onSignUpPressed = () => {
     const nameError = nameValidator(name);
@@ -77,7 +77,8 @@ export default function SignUpScreen({navigation}) {
       </Button>
       <Button
         mode="contained"
-        onPress={() => register(email, password)}
+        // onPress={() => register(email, password)}
+        onPress={() => navigation.navigate('tabs')}
         style={{marginTop: 6}}>
         Sign Up
       </Button>

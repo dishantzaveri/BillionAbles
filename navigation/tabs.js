@@ -9,7 +9,7 @@ import Donors from '../screens/Donors';
 const Tab = createBottomTabNavigator();
 
 const Tabs = ({route}) => {
-  const email = route.params.text;
+  // const email = route.params.text;
   return (
     <Tab.Navigator initialRouteName="Profile" activeColor="#fff">
       <Tab.Screen
@@ -38,7 +38,7 @@ const Tabs = ({route}) => {
         }}
       />
       <Tab.Screen
-        initialParams={{text: email}}
+        // initialParams={{text: email}}
         name="Donate"
         component={Donors}
         options={{
@@ -52,7 +52,7 @@ const Tabs = ({route}) => {
       />
 
       <Tab.Screen
-        initialParams={{text: email}}
+        // initialParams={{text: email}}
         name="Profile"
         component={Profile}
         options={{

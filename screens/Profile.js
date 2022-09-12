@@ -12,7 +12,7 @@ import {
 import {AuthContext} from '../navigation/AuthProvider.android.js';
 
 const Profile = ({navigation, route}) => {
-  const {logout} = useContext(AuthContext);
+  // const {logout} = useContext(AuthContext);
 
   return (
     <View style={styles.container}>
@@ -91,7 +91,8 @@ const Profile = ({navigation, route}) => {
 
           <TouchableOpacity
             style={styles.commandButton}
-            onPress={() => logout()}>
+            // onPress={() => logout()}
+            >
             <Text style={styles.panelButtonTitle}>Logout</Text>
           </TouchableOpacity>
         </View>

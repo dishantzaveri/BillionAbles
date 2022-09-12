@@ -15,7 +15,7 @@ export default function LogInScreen({ navigation }) {
   const [name, setName] = useState({ value: '', error: '' });
   const [email, setEmail] = useState({ value: '', error: '' });
   const [password, setPassword] = useState({ value: '', error: '' });
-  const { login, } = useContext(AuthContext);
+  // const { login, } = useContext(AuthContext);
 
   const onSignUpPressed = () => {
     const nameError = nameValidator(name);
@@ -70,7 +70,8 @@ export default function LogInScreen({ navigation }) {
       </Button>
       <Button
         mode="contained"
-        onPress={() => login(email, password)}
+        // onPress={() => login(email, password)}
+        onPress={() => navigation.navigate('tabs')}
         style={{ marginTop: 6 }}>
         LogIn
       </Button>
